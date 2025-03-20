@@ -1,11 +1,11 @@
 import { MapPin, Briefcase, Calendar, CalendarPlus } from 'lucide-react';
-import logo from 'next/image';
+import Image from 'next/image';
 
 export default function MainHeader() {
     return(
         <div className='rounded-lg bg-gray-100 overflow-hidden w-full'>
                 <div className='flex flex-col items-center py-6 text-sm'>
-                    <img className='w-70 h-9' src="/images/logo.png" alt="Enterprise logo"/>
+                    <Image className='w-70 h-9' src="/images/logo.png" alt="Enterprise logo"/>
                 </div>
 
                 <div className='flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-8'>
