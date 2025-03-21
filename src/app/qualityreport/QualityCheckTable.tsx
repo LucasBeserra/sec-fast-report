@@ -1,16 +1,16 @@
 export default function QualityCheckTable() {
     const activities = [
-      "criterio 1",
-      "criterio 2",
-      "criterio 3",
-      "criterio 4",
-      "criterio 5",
-      "criterio 6",
+      "Rebarbas e cantos vivos",
+      "Qualidade da solda",
+      "Trava rosca",
+      "Alinhamento",
+      "Polimento",
+      "Jateamento",
+      "Altura",
     ];
   
     return (
       <div className="p-4">
-        <h2 className="text-lg font-semibold mb-4">Quality Check Table</h2>
         <table className="w-full border-collapse border border-gray-300 rounded-lg bg-white">
           <thead>
             <tr className="bg-gray-200 text-gray-700">
