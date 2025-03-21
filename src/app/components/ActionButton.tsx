@@ -1,6 +1,6 @@
 import { CloudUpload } from "lucide-react";
 
-export default function ActionButtons() {
+export default function ActionButton() {
 
     return(
       <div className="mt-6 w-2xl mx-auto flex justify-between">

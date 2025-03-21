@@ -16,7 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import DatePicker from "./Datepicker"
+import DatePicker from "./DatePicker"
 import Image from "next/image"
 
 export function CardWithForm() {

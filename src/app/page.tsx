@@ -1,4 +1,4 @@
-import ActionButtons from '@/app/components/Actionbutton';
+import ActionButtons from '@/app/components/ActionButton';
 import MainHeader from '@/app/components/Mainheader';
 import QualityCheckTable from '@/app/qualityreport/QualityCheckTable';
 
