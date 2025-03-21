@@ -1,7 +1,6 @@
 import ActionButtons from '@/app/components/ActionButton';
-import MainHeader from '@/app/components/Mainheader';
 import QualityCheckTable from '@/app/qualityreport/QualityCheckTable';
-
+import MainHeader from './components/MainHeader';
 
 export default function Home() {
   return (
