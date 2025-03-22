@@ -18,10 +18,11 @@ import {
 } from "@/components/ui/select"
 import DatePicker from "./DatePicker"
 import Image from "next/image"
+import QualityCheckTable from "@/app/qualityreport/QualityCheckTable"
 
 export function CardWithForm() {
   return (
-    <Card className="w-[350px]">
+    <Card className="w-[600px]">
       <CardHeader>
          <div className='flex flex-col items-center py-6 text-sm'>
             <Image width={135} height={36} src="/images/logo.png" alt="Enterprise logo"/>
@@ -60,6 +61,10 @@ export function CardWithForm() {
 
           </div>
         </form>
+
+
+        <QualityCheckTable />
+
       </CardContent>
     </Card>
   )

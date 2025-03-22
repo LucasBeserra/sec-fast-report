@@ -10,8 +10,8 @@ export default function QualityCheckTable() {
     ];
   
     return (
-      <div className="p-4">
-        <table className="w-full border-collapse border border-gray-300 rounded-lg bg-white">
+      <div >
+        <table className="w-sm border-collapse border border-gray-300 rounded-lg bg-white">
           <thead>
             <tr className="bg-gray-200 text-gray-700">
               <th className="p-3 border border-gray-300"></th>
