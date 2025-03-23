@@ -18,7 +18,8 @@ import {
 } from "@/components/ui/select"
 import DatePicker from "./DatePicker"
 import Image from "next/image"
-import QualityCheckTable from "@/app/qualityreport/QualityCheckTable"
+import QualityCheckTable from "@/components/QualityCheckTable"
+import ActionButton from "./ActionButton"
 
 export function CardWithForm() {
   return (
@@ -35,9 +36,15 @@ export function CardWithForm() {
         <form>
           <div className="grid w-full items-center gap-4">
 
+
+            <div className="flex flex-col space-y-1.5">
+              <Label htmlFor="name">Código do Relatório</Label>
+              <Input className="shadow-xs shadow-amber-200" id="name" placeholder="Código do Relatório" />
+            </div>
+
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="name">Cliente</Label>
-              <Input id="name" placeholder="Razão Social" />
+              <Input className="shadow-xs shadow-amber-200" id="name" placeholder="Razão Social" />
             </div>
 
             <DatePicker/>
@@ -51,10 +58,10 @@ export function CardWithForm() {
                 </SelectTrigger>
 
                 <SelectContent position="popper">
-                  <SelectItem value="next">Placa Magnética</SelectItem>
-                  <SelectItem value="sveltekit">Bastão Magnético</SelectItem>
-                  <SelectItem value="astro">Filtro Magnético</SelectItem>
-                  <SelectItem value="nuxt">Polia Magnética</SelectItem>
+                  <SelectItem value="Placa magnetica">Placa Magnética</SelectItem>
+                  <SelectItem value="Bastao magnetico">Bastão Magnético</SelectItem>
+                  <SelectItem value="Filtro magnetico">Filtro Magnético</SelectItem>
+                  <SelectItem value="Polia magnetica">Polia Magnética</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -62,8 +69,9 @@ export function CardWithForm() {
           </div>
         </form>
 
-
         <QualityCheckTable />
+
+        <ActionButton />
 
       </CardContent>
     </Card>

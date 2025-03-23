@@ -8,31 +8,31 @@ export default function QualityCheckTable() {
       "Jateamento",
       "Altura",
     ];
-  
+
     return (
-      <div >
-        <table className="w-sm border-collapse border border-gray-300 rounded-lg bg-white">
+      <div className="">
+        <table className="w-full border border-white border-collapse ">
           <thead>
-            <tr className="bg-gray-200 text-gray-700">
-              <th className="p-3 border border-gray-300"></th>
-              <th className="p-3 border border-gray-300">Aprovado</th>
-              <th className="p-3 border border-gray-300">Reprovado</th>
-              <th className="p-3 border border-gray-300">Não Aplicável</th>
+            <tr className="text-gray-700 text-wrap bg-orange-200 ">
+              <th className="p-3 border border-white bg-white"></th>
+              <th className="p-3 rounded-tl-3xl">Aprovado</th>
+              <th className="p-3 ">Reprovado</th>
+              <th className="p-3 rounded-tr-3xl">Não Aplicável</th>
             </tr>
           </thead>
           <tbody>
             {activities.map((criterio, index) => (
-              <tr key={index} className="border border-gray-300">
-                <td className="p-3 bg-gray-100 font-medium border border-gray-300">
+              <tr key={index} >
+                <td className="p-3 bg-orange-200 font-medium">
                   {criterio}
                 </td>
-                <td className="p-3 text-center border border-gray-300">
+                <td className="p-3 text-center">
                   <input type="radio" name={`criterio-${index}`} className="w-4 h-4" />
                 </td>
-                <td className="p-3 text-center border border-gray-300">
+                <td className="p-3 text-center">
                   <input type="radio" name={`criterio-${index}`} className="w-4 h-4" />
                 </td>
-                <td className="p-3 text-center border border-gray-300">
+                <td className="p-3 text-center">
                   <input type="radio" name={`criterio-${index}`} className="w-4 h-4" />
                 </td>
               </tr>
