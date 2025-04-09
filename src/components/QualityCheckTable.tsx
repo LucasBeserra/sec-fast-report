@@ -15,9 +15,9 @@ export default function QualityCheckTable() {
           <thead>
             <tr className="text-gray-700 text-wrap bg-blue-600 text-white ">
               <th className="p-3">Critérios</th>
-              <th className="p-3 rounded-tl-lg">Aprovado</th>
-              <th className="p-3 ">Reprovado</th>
-              <th className="p-3 rounded-tr-3xl">Não Aplicável</th>
+              <th className="p-3">Aprovado</th>
+              <th className="p-3">Reprovado</th>
+              <th className="p-3">Não Aplicável</th>
             </tr>
           </thead>
           <tbody>
