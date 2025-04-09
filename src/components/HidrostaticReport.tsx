@@ -4,7 +4,7 @@ import type { Company } from '../types/types';
 import toast, { Toaster } from 'react-hot-toast';
 import Image from 'next/image';
 
-function HidroReport() {
+function HidrostaticReport() {
   const [loading, setLoading] = useState(false);
   const [company, setCompany] = useState<Company>({
     name: '',
@@ -13,6 +13,7 @@ function HidroReport() {
     image2_url: '',
     measurements: []
   });
+  
   const [images, setImages] = useState<{ preview1: string; preview2: string }>({
     preview1: '',
     preview2: ''
@@ -92,17 +93,17 @@ function HidroReport() {
   };
 
   return (
-    <div className="min-h-screen bg-white py-4 px-4 sm:px-6 lg:px-8">
+    <div className="bg-white py-4 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
-        <div className="bg-white shadow-xl rounded-lg overflow-hidden">
-          <div className="px-8 py-6 bg-orange-200 to-orange-700">
+        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="px-8 py-4 bg-blue-600 text-white">
             <h1 className="text-3xl font-bold text-center">
               Teste Hidrostático
             </h1>
           </div>
 
-          <form onSubmit={handleSubmit} className="p-8 space-y-6">
-            {/* Company Details */}
+          <form onSubmit={handleSubmit} className="p-8 space-y-4">
+            {/* Equipment Details */}
             <div className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
@@ -206,4 +207,4 @@ function HidroReport() {
   );
 }
 
-export default HidroReport;
+export default HidrostaticReport;

@@ -21,13 +21,13 @@ import DatePicker from "./DatePicker";
 import Image from "next/image";
 import QualityCheckTable from "@/components/QualityCheckTable";
 import ActionButton from "./ActionButton";
-import HidroReport from "./hidroReport";
+import HidrostaticReport from "./HidrostaticReport";
 
 export function QualityForm() {
   return (
-    <Card className="w-[600px]">
+    <Card className="w-[800px] py-6 ">
       <CardHeader>
-        <div className="flex flex-col items-center py-6 text-sm">
+        <div className="flex flex-col items-center py-8 text-sm ">
           <Image
             width={135}
             height={36}
@@ -36,15 +36,20 @@ export function QualityForm() {
           />
         </div>
 
-        <CardTitle>Criar Relatório</CardTitle>
-        <CardDescription>Relatório de inspeção de Qualidade.</CardDescription>
       </CardHeader>
+
       <CardContent>
-        <div className="grid w-full items-center gap-4">
-          <div className="flex flex-col space-y-1.5">
+        <CardHeader className="bg-blue-500px-8 py-4 bg-blue-600 text-white rounded-t-lg">
+          <CardTitle className="text-xl ">Criar Relatório</CardTitle>
+          <CardDescription className="text-lg text-white">Relatório de inspeção de Qualidade.</CardDescription>
+        </CardHeader>
+
+
+        <div className="flex flex-col gap-4 bg-white shadow-lg rounded-lg overflow-hidden py-6 px-6 ">
+          <div className="flex flex-col space-y-1.5 border-0 ">
             <Label htmlFor="name">Código do Relatório</Label>
             <Input
-              className="shadow-xs shadow-amber-200"
+              className="shadow-xs shadow-blue-500"
               id="name"
               placeholder="Código do Relatório"
             />
@@ -53,7 +58,7 @@ export function QualityForm() {
           <div className="flex flex-col space-y-1.5">
             <Label htmlFor="client">Cliente</Label>
             <Input
-              className="shadow-xs shadow-amber-200"
+              className="shadow-xs shadow-blue-500"
               id="client"
               placeholder="Razão Social"
             />
@@ -66,13 +71,13 @@ export function QualityForm() {
               Família de Equipamentos
             </Label>
             <Select>
-              <SelectTrigger id="framework">
-                <SelectValue placeholder="Select" />
+              <SelectTrigger id="equipamento">
+                <SelectValue placeholder="Selecione uma familia de equipamento" />
               </SelectTrigger>
 
-              <SelectContent position="popper">
+              <SelectContent position="popper" className="w-[600px]">
                 <SelectItem value="Placa magnetica">
-                  Placa Magnética
+                  Placa Magnética 
                 </SelectItem>
                 <SelectItem value="Bastao magnetico">
                   Bastão Magnético
@@ -90,7 +95,7 @@ export function QualityForm() {
 
         <QualityCheckTable />
 
-        <HidroReport />
+        <HidrostaticReport />
 
         <ActionButton />
 

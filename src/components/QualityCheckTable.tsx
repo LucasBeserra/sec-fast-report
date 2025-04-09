@@ -10,12 +10,12 @@ export default function QualityCheckTable() {
     ];
 
     return (
-      <div className="">
-        <table className="w-full border border-white border-collapse ">
+      <div className="py-6">
+        <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden ">
           <thead>
-            <tr className="text-gray-700 text-wrap bg-orange-200 ">
-              <th className="p-3 border border-white bg-white"></th>
-              <th className="p-3 rounded-tl-3xl">Aprovado</th>
+            <tr className="text-gray-700 text-wrap bg-blue-600 text-white ">
+              <th className="p-3">Critérios</th>
+              <th className="p-3 rounded-tl-lg">Aprovado</th>
               <th className="p-3 ">Reprovado</th>
               <th className="p-3 rounded-tr-3xl">Não Aplicável</th>
             </tr>
@@ -23,7 +23,7 @@ export default function QualityCheckTable() {
           <tbody>
             {activities.map((criterio, index) => (
               <tr key={index} >
-                <td className="p-3 bg-orange-200 font-medium">
+                <td className="p-3 bg-blue-500 text-white font-medium">
                   {criterio}
                 </td>
                 <td className="p-3 text-center">
