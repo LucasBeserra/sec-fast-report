@@ -9,7 +9,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -47,7 +46,6 @@ export function QualityForm() {
 
         <div className="flex flex-col gap-4 bg-white shadow-lg rounded-lg overflow-hidden py-6 px-6 ">
           <div className="flex flex-col space-y-1.5 border-0 ">
-            <Label htmlFor="name">Código do Relatório</Label>
             <Input
               className="shadow-xs shadow-blue-500"
               id="name"
@@ -56,20 +54,16 @@ export function QualityForm() {
           </div>
 
           <div className="flex flex-col space-y-1.5">
-            <Label htmlFor="client">Cliente</Label>
             <Input
               className="shadow-xs shadow-blue-500"
               id="client"
               placeholder="Razão Social"
             />
           </div>
-
+        
           <DatePicker />
 
           <div className="flex flex-col space-y-1.5">
-            <Label htmlFor="Equipamentos">
-              Família de Equipamentos
-            </Label>
             <Select>
               <SelectTrigger id="equipamento">
                 <SelectValue placeholder="Selecione uma familia de equipamento" />
