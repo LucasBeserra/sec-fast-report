@@ -28,8 +28,8 @@ export function QualityForm() {
       <CardHeader>
         <div className="flex flex-col items-center py-8 text-sm ">
           <Image
-            width={135}
-            height={36}
+            width={240}
+            height={63}
             src="/images/logo.png"
             alt="Enterprise logo"
           />
