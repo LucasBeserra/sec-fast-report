@@ -26,20 +26,38 @@ export function QualityForm() {
   return (
     <Card className="w-[800px] py-6 ">
       <CardHeader>
-        <div className="flex flex-col items-center py-8 text-sm ">
-          <Image
-            width={240}
-            height={63}
-            src="/images/logo.png"
-            alt="Enterprise logo"
-          />
+        <div className="flex flex-row flex-wrap justify-between">
+
+          <div className="flex flex-col justify-between py-8">
+            <Image
+              width={240}
+              height={63}
+              src="/images/logo.png"
+              alt="Enterprise logo"
+            />
+
+            <div className="flex flex-col text-sm font-bold text-black">
+              <h2 >MAGTEK INDÚSTRIA DE PRODUTOS MAGNÉTICOS LTDA - EPP</h2>
+              <h2>CNPJ: 07.938.924/0001-82 I.E: 636.296.759.115</h2>
+            </div>
+
+          </div>
+
+          <div className="flex flex-row flex-wrap justify-between items-center py-8 text-sm ">            
+            <Image
+              width={240}
+              height={63}
+              src="/images/isoLogo2.png"
+              alt="Enterprise logo"
+            />
+          </div>
         </div>
 
       </CardHeader>
 
       <CardContent>
         <CardHeader className="bg-blue-500px-8 py-4 bg-blue-600 text-white rounded-t-lg">
-          <CardTitle className="text-xl ">Criar Relatório</CardTitle>
+          <CardTitle className="text-xl ">F32 - Relatório Qualidade Produto</CardTitle>
           <CardDescription className="text-lg text-white">Relatório de inspeção de Qualidade.</CardDescription>
         </CardHeader>
 
@@ -50,6 +68,14 @@ export function QualityForm() {
               className="shadow-xs shadow-blue-500"
               id="name"
               placeholder="Código do Relatório"
+            />
+          </div>
+
+          <div className="flex flex-col space-y-1.5 border-0 ">
+            <Input
+              className="shadow-xs shadow-blue-500"
+              id="name"
+              placeholder="Número de Série"
             />
           </div>
 
@@ -95,6 +121,7 @@ export function QualityForm() {
 
 
       </CardContent>
+
     </Card>
   );
 }
