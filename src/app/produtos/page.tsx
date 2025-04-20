@@ -14,10 +14,11 @@ interface Produto {
 export default function ProdutosPage() {
   const [nome, setNome] = useState("");
   const [produtos, setProdutos] = useState<Produto[]>([]);
+  const apiURL = process.env.NEXT_PUBLIC_API_URL;
 
   const fetchProdutos = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/produtos");
+      const response = await axios.get(`${apiURL}/api/produtos`);
       setProdutos(response.data);
     } catch (error) {
       console.error("Erro na requisção de produtos:", error);
@@ -30,7 +31,7 @@ export default function ProdutosPage() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:3001/api/produtos", { nome }); // Envia o nome do produto
+      await axios.post(`${apiURL}/api/produtos`, { nome }); // Envia o nome do produto
       alert("Produto cadastrado com sucesso!");
       setNome(""); // Limpa o campo
       fetchProdutos(); // Atualiza a lista
