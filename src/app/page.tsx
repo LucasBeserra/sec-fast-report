@@ -11,16 +11,16 @@ export default function Home() {
         <h2 className="text-2xl font-bold mb-10 text-center">Menu</h2>
 
         <nav className="flex flex-col space-y-4">
-          <Link href="/relatorios" target='_blank' className="hover:bg-blue-500 py-2 px-4 rounded-lg transition">
+          <Link href="/relatorios" className="hover:bg-blue-500 py-2 px-4 rounded-lg transition">
             Relatórios
           </Link>
-          <Link href="/produtos" target='_blank' className="hover:bg-blue-500 py-2 px-4 rounded-lg transition">
+          <Link href="/produtos" className="hover:bg-blue-500 py-2 px-4 rounded-lg transition">
             Cadastro de Produto
           </Link>
-          <Link href="/clientes" target='_blank' className="hover:bg-blue-500 py-2 px-4 rounded-lg transition">
+          <Link href="/clientes" className="hover:bg-blue-500 py-2 px-4 rounded-lg transition">
             Cadastro de Cliente
           </Link>
-          <Link href="/criterios" target='_blank' className="hover:bg-bluSe-500 py-2 px-4 rounded-lg transition">
+          <Link href="/criterios" className="hover:bg-bluSe-500 py-2 px-4 rounded-lg transition">
             Cadastro de Critério
           </Link>
         </nav>

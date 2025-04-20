@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Link from "next/link";
 
 interface Produto {
   id: number;
   nome: string;
-  createdAt: string;
+  createdAt: Date;
 }
 
 export default function ProdutosPage() {
@@ -17,6 +18,7 @@ export default function ProdutosPage() {
     try {
       const response = await axios.get("http://localhost:3001/api/produtos");
       setProdutos(response.data);
+      console.log(response.data);
     } catch (error) {
       console.error("Erro na requisção de produtos:", error);
     }
@@ -28,7 +30,7 @@ export default function ProdutosPage() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:3001/api/produtos", { nome }); // Envia o nome do produto
+      await axios.post("http://localhost:3001/api/produtos", { nome });
       alert("Produto cadastrado com sucesso!");
       setNome(""); // Limpa o campo
       fetchProdutos(); // Atualiza a lista
@@ -39,15 +41,33 @@ export default function ProdutosPage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+    <div className="flex min-h-screen">
+      {/* Menu lateral */}
+      <aside className="w-64 bg-blue-600 text-white flex flex-col py-8 px-4 shadow-lg">
+        <h2 className="text-2xl font-bold mb-10 text-center">Menu</h2>
+
+        <nav className="flex flex-col space-y-4">
+          <Link href="/relatorios" className="hover:bg-blue-500 py-2 px-4 rounded-lg transition">
+            Relatórios
+          </Link>
+          <Link href="/produtos" className="hover:bg-blue-500 py-2 px-4 rounded-lg transition">
+            Cadastro de Produto
+          </Link>
+          <Link href="/clientes" className="hover:bg-blue-500 py-2 px-4 rounded-lg transition">
+            Cadastro de Cliente
+          </Link>
+          <Link href="/criterios" className="hover:bg-blue-500 py-2 px-4 rounded-lg transition">
+            Cadastro de Critério
+          </Link>
+        </nav>
+      </aside>
 
       {/* Conteúdo */}
       <main className="flex-1 p-10 bg-gray-100">
+        <h1 className="text-3xl font-bold text-gray-800 mb-6">Cadastrar Produto</h1>
 
         {/* Formulário */}
         <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-md w-full max-w-md mb-10">
-          <h1 className="text-3xl font-bold text-gray-800 mb-6">Cadastrar Produto</h1>
-
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-2" htmlFor="nome">
               Nome do Produto
@@ -83,10 +103,10 @@ export default function ProdutosPage() {
                 <li
                   key={produto.id}
                   className="flex items-center justify-between p-4 border border-gray-200 rounded hover:shadow transition"
-                  >
+                >
+                  <span className="text-gray-700 font-medium">{produto.id}</span>
                   <span className="text-gray-700 font-medium">{produto.nome}</span>
                   <span className="text-gray-700 font-medium">{produto.createdAt}</span>
-
                   {/* Aqui pode adicionar futuramente botões de Editar ou Deletar */}
                 </li>
               ))}
@@ -97,4 +117,3 @@ export default function ProdutosPage() {
     </div>
   );
 }
-

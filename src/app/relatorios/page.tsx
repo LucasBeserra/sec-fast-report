@@ -20,7 +20,7 @@ export default function RelatoriosPage() {
       <main className="flex-1 p-10 bg-gray-100">
         <h1 className="text-3xl font-bold text-gray-800">Relatórios</h1>
         <p className="text-gray-600 mt-2">
-          Área para consultar e gerar relatórios.
+          Área onde será possível visualizar o histórico de relatórios gerados.
         </p>
       </main>
 
