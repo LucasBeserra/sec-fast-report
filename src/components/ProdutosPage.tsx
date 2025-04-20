@@ -7,7 +7,7 @@ import Link from "next/link";
 interface Produto {
   id: number;
   nome: string;
-  createdAt: Date;
+  createdAt: string;
 }
 
 export default function ProdutosPage() {
