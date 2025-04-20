@@ -9,6 +9,8 @@ interface Produto {
   createdAt: string;
 }
 
+//apenas testando uma parada aqui
+
 export default function ProdutosPage() {
   const [nome, setNome] = useState("");
   const [produtos, setProdutos] = useState<Produto[]>([]);
