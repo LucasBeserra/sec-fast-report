@@ -18,7 +18,7 @@ export default function ProdutosPage() {
 
   const fetchProdutos = async () => {
     try {
-      const response = await axios.get(`${apiURL}/api/produtos`);
+      const response = await axios.get('sec-fast-report-api-v2-production.up.railway.app/api/produtos'); 
       setProdutos(response.data);
     } catch (error) {
       console.error("Erro na requisção de produtos:", error);
