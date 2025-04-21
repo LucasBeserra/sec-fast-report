@@ -1,0 +1,18 @@
+{
+    "window.zoomLevel": 1,
+    "editor.fontSize": 14,
+    "symbols.hidesExplorerArrows": false,
+    "editor.fontFamily": "Fira Code Retina",
+    "editor.fontLigatures": true,
+    "editor.lineHeight": 1.5,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.renderLineHighlight": "gutter",
+    "explorer.compactFolders": false,
+    "editor.semanticHighlighting.enabled": false,
+    "breadcrumbs.enabled": false,
+    "window.commandCenter": false,
+    "explorer.fileNesting.patterns": {
+        "package.json": ".eslint*, prettier*, tsconfig*, vite*, pnpm-lock*, package-lock*, bun.lockb",
+        "tailwind.config*": "tailwind.config*, postcss.config*",
+    }
+}

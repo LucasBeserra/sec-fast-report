@@ -3,28 +3,27 @@
 import Link from 'next/link';
 
 export default function Home() {
+    const links = [
+      { href: '/relatorios', label: 'Relatórios' },
+      { href: '/produtos', label: 'Cadastro de Produto' },
+      { href: '/clientes', label: 'Cadastro de Cliente' },
+    ]
+
   return (
     <div className="flex min-h-screen bg-gray-100">
       
       {/* Sidebar */}
       <aside className="w-64 bg-blue-600 text-white flex flex-col py-8 px-4 shadow-lg">
-        <h2 className="text-2xl font-bold mb-10 text-center">Menu</h2>
+            <h2 className="text-2xl font-bold mb-10 text-center">Menu</h2>
 
-        <nav className="flex flex-col space-y-4">
-          <Link href="/relatorios" className="hover:bg-blue-500 py-2 px-4 rounded-lg transition">
-            Relatórios
-          </Link>
-          <Link href="/produtos" className="hover:bg-blue-500 py-2 px-4 rounded-lg transition">
-            Cadastro de Produto
-          </Link>
-          <Link href="/clientes" className="hover:bg-blue-500 py-2 px-4 rounded-lg transition">
-            Cadastro de Cliente
-          </Link>
-          <Link href="/criterios" className="hover:bg-bluSe-500 py-2 px-4 rounded-lg transition">
-            Cadastro de Critério
-          </Link>
-        </nav>
-      </aside>
+            <nav className="flex flex-col space-y-4">
+                {links.map((link) => (
+                    <Link key={link.href} href={link.href} className="hover:bg-blue-500 py-2 px-4 rounded-lg transition">
+                        {link.label}
+                    </Link>
+                ))}
+            </nav>
+        </aside>
 
       {/* Conteúdo principal */}
       <main className="flex-1 p-10">

@@ -9,16 +9,12 @@ interface Produto {
   createdAt: string;
 }
 
-//apenas testando uma parada aqui
-
 export default function ProdutosPage() {
   const [nome, setNome] = useState("");
   const [produtos, setProdutos] = useState<Produto[]>([]);
-  const apiURL = process.env.NEXT_PUBLIC_API_URL;
-
   const fetchProdutos = async () => {
     try {
-      const response = await axios.get('sec-fast-report-api-v2-production.up.railway.app/api/produtos'); 
+      const response = await axios.get('http://localhost:3001/api/produtos'); 
       setProdutos(response.data);
     } catch (error) {
       console.error("Erro na requisção de produtos:", error);
@@ -31,7 +27,7 @@ export default function ProdutosPage() {
     e.preventDefault();
 
     try {
-      await axios.post(`${apiURL}/api/produtos`, { nome }); // Envia o nome do produto
+      await axios.post("http://localhost:3001/api/produtos", { nome }); // Envia o nome do produto
       alert("Produto cadastrado com sucesso!");
       setNome(""); // Limpa o campo
       fetchProdutos(); // Atualiza a lista
@@ -45,11 +41,11 @@ export default function ProdutosPage() {
     <div className="flex min-h-screen flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
 
       {/* Conteúdo */}
-      <main className="flex-1 p-10 bg-gray-100">
+      <main className="flex-1 w-lg p-10 bg-gray-100 ">
 
         {/* Formulário */}
-        <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-md w-full max-w-md mb-10">
-          <h1 className="text-3xl font-bold text-gray-800 mb-6">Cadastrar Produto</h1>
+        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-md w-full max-w-4xl mb-10 ">
+          <h1 className="text-3xl font-bold text-gray-800 text-center mb-6">Cadastrar Produto</h1>
 
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-2" htmlFor="nome">
@@ -75,7 +71,7 @@ export default function ProdutosPage() {
         </form>
 
         {/* Lista de Produtos */}
-        <div className="bg-white p-8 rounded shadow-md w-full max-w-4xl">
+        <div className="bg-white p-8 rounded-2xl shadow-md w-full max-w-4xl">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Produtos Cadastrados</h2>
 
           {produtos.length === 0 ? (
@@ -88,9 +84,17 @@ export default function ProdutosPage() {
                   className="flex items-center justify-between p-4 border border-gray-200 rounded hover:shadow transition"
                   >
                   <span className="text-gray-700 font-medium">{produto.nome}</span>
-                  <span className="text-gray-700 font-medium">{produto.createdAt}</span>
 
                   {/* Aqui pode adicionar futuramente botões de Editar ou Deletar */}
+
+                  <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition">
+                    Deletar
+                  </button>
+
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition">
+                    Editar
+                  </button>
+
                 </li>
               ))}
             </ul>
