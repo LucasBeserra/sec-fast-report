@@ -40,6 +40,7 @@ export default function CadastroAvaliacao() {
         axios.get("http://localhost:3001/api/clientes"),
         axios.get("http://localhost:3001/api/criterios"),
       ]);
+
       setProdutos(produtosRes.data);
       setClientes(clientesRes.data);
       setCriterios(criteriosRes.data);
@@ -84,6 +85,7 @@ export default function CadastroAvaliacao() {
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md w-full max-w-3xl">
         <h1 className="text-2xl font-bold mb-6 text-center">Cadastrar Avaliação</h1>
 
+        {/* Cabeçalho do formulário */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
           <div>
@@ -145,7 +147,8 @@ export default function CadastroAvaliacao() {
             />
           </div>
         </div>
-
+        
+        {/* Critérios de Avaliação */}
         <h2 className="text-lg font-semibold mt-8 mb-4">Critérios de Avaliação</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

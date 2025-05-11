@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -14,14 +14,16 @@ export default function ProdutosPage() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
   const fetchProdutos = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/produtos'); 
+      const response = await axios.get("http://localhost:3001/api/produtos");
       setProdutos(response.data);
     } catch (error) {
       console.error("Erro na requisção de produtos:", error);
     }
   };
 
-  useEffect(() => {fetchProdutos();}, []);
+  useEffect(() => {
+    fetchProdutos();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,18 +39,47 @@ export default function ProdutosPage() {
     }
   };
 
+  const handleDelete = async (id: number) => {
+    try {
+      await axios.delete(`http://localhost:3001/api/produtos/${id}`);
+      alert("Produto excluido com sucesso!");
+      fetchProdutos(); // Atualiza a lista
+    } catch (error) {
+      console.error(error);
+      alert("Erro ao excluir produto.");
+    }
+  };
+
+  const handleUpdate = async (id: number) => {
+    try {
+      await axios.put(`http://localhost:3001/api/produtos/${id}`);
+      alert("Produto atualizado com sucesso!");
+      fetchProdutos(); // Atualiza a lista
+    } catch (error) {
+      console.error(error);
+      alert("Erro ao atualizar produto.");
+    }
+  };
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
 
       {/* Conteúdo */}
       <main className="flex-1 w-lg p-10 bg-gray-100 ">
-
         {/* Formulário */}
-        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-md w-full max-w-4xl mb-10 ">
-          <h1 className="text-3xl font-bold text-gray-800 text-center mb-6">Cadastrar Produto</h1>
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white p-8 rounded-2xl shadow-md w-full max-w-4xl mb-10 "
+        >
+          <h1 className="text-3xl font-bold text-gray-800 text-center mb-6">
+            Cadastrar Produto
+          </h1>
 
           <div className="mb-4">
-            <label className="block text-gray-700 font-semibold mb-2" htmlFor="nome">
+            <label
+              className="block text-gray-700 font-semibold mb-2"
+              htmlFor="nome"
+            >
               Nome do Produto
             </label>
             <input
@@ -72,7 +103,9 @@ export default function ProdutosPage() {
 
         {/* Lista de Produtos */}
         <div className="bg-white p-8 rounded-2xl shadow-md w-full max-w-4xl">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Produtos Cadastrados</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            Produtos Cadastrados
+          </h2>
 
           {produtos.length === 0 ? (
             <p className="text-gray-600">Nenhum produto cadastrado ainda.</p>
@@ -81,20 +114,23 @@ export default function ProdutosPage() {
               {produtos.map((produto) => (
                 <li
                   key={produto.id}
-                  className="flex items-center justify-between p-4 border border-gray-200 rounded hover:shadow transition"
-                  >
-                  <span className="text-gray-700 font-medium">{produto.nome}</span>
+                  className="grid grid-cols-3 items-center gap-2 w-full p-4 border border-gray-200 rounded hover:shadow transition"
+                >
+                  <span className="text-gray-700 font-medium">
+                    {produto.nome}
+                  </span>
 
-                  {/* Aqui pode adicionar futuramente botões de Editar ou Deletar */}
-
-                  <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition">
+                  <button 
+                    onClick={() => handleDelete(produto.id)}
+                  className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition">
                     Deletar
                   </button>
 
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition">
+                  <button 
+                    onClick={() => handleUpdate(produto.id)}
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition">
                     Editar
                   </button>
-
                 </li>
               ))}
             </ul>
@@ -104,4 +140,3 @@ export default function ProdutosPage() {
     </div>
   );
 }
-
