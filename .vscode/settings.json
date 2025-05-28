@@ -13,5 +13,6 @@
     "explorer.fileNesting.patterns": {
         "package.json": ".eslint*, prettier*, tsconfig*, vite*, pnpm-lock*, package-lock*, bun.lockb",
         "tailwind.config*": "tailwind.config*, postcss.config*",
-    }
+    },
+    "liveServer.settings.port": 5501
 }
